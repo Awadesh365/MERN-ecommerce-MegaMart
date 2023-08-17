@@ -1,34 +1,34 @@
-import React, { useState, Fragment } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, incrementAsync, selectCount } from './cartSlice';
-import { Dialog, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import React, { useState, Fragment } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, incrementAsync, selectCount } from "./cartSlice";
+import { Dialog, Transition } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const products = [
   {
     id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
+    name: "Throwback Hip Bag",
+    href: "#",
+    color: "Salmon",
+    price: "$90.00",
     quantity: 1,
     imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
     imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
   },
   {
     id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
+    name: "Medium Stuff Satchel",
+    href: "#",
+    color: "Blue",
+    price: "$32.00",
     quantity: 1,
     imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
     imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
   // More products...
 ];
@@ -109,25 +109,24 @@ export default function Cart() {
               Shipping and taxes calculated at checkout.
             </p>
             <div className="mt-6">
-              <a
-                href="#"
+              <Link
+                to="/checkout"
                 className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
               >
                 Checkout
-              </a>
+              </Link>
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
                 or
                 <Link to="/">
-                <button
-                  type="button"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                  onClick={() => setOpen(false)}
-                >
-                  Continue Shopping
-                  <span aria-hidden="true"> &rarr;</span>
-                </button>
+                  <button
+                    type="button"
+                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                  >
+                    Continue Shopping
+                    <span aria-hidden="true"> &rarr;</span>
+                  </button>
                 </Link>
               </p>
             </div>
